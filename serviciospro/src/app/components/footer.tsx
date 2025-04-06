@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">ServiciosPro</h3>
             <p className="text-gray-400 mb-4">
-              Ofrecemos soluciones profesionales para satisfacer todas tus necesidades de servicios.
+              Ofrecemos servicios profesionales para satisfacer todas tus necesidades para el cuidado de su motocicleta.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -44,14 +44,9 @@ export default function Footer() {
                 <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
                   Servicios
                 </Link>
-              </li>
+              </li>       
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
-                  Nosotros
-                </Link>
-              </li>
-              <li>
-                <Link href="/testimonials" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#testimonials" className="text-gray-400 hover:text-white transition-colors">
                   Testimonios
                 </Link>
               </li>
