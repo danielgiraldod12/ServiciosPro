@@ -5,7 +5,7 @@ import { User } from "@/types/user"
 
 // Ruta al archivo JSON de usuarios
 const usersFilePath = path.join(process.cwd(), "src", "data", "users.json")
-
+// Función para leer usuarios desde el archivo JSON
 const getUsers = () => {
   try {
     if (!fs.existsSync(usersFilePath)) {

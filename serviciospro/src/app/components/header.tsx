@@ -8,7 +8,8 @@ interface UserType {
   name: string
   role: string
 }
-
+// Este componente Header proporciona la barra de navegación principal de la aplicación
+// incluyendo enlaces a diferentes secciones y un menú desplegable para usuarios autenticados.
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [user, setUser] = useState<UserType | null>(null)

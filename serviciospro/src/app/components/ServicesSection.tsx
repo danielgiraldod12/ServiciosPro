@@ -1,5 +1,6 @@
 import { Shield, Zap, BarChart, Users } from "lucide-react"
-
+// Sección de servicios
+// Esta sección presenta los diferentes servicios ofrecidos por la empresa, cada uno con un ícono, título y descripción.
 export default function ServicesSection() {
   const services = [
     {

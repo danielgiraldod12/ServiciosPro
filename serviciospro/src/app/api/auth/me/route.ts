@@ -6,7 +6,7 @@ const JWT_SECRET = "secreto_super_seguro"
 
 export async function GET() {
   try {
- 
+ // Verificar si el token existe en las cookies
     const cookieStore = cookies()
     const token = (await cookieStore).get("token")?.value
     console.log(token)

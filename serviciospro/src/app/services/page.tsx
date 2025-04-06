@@ -15,7 +15,7 @@ interface Service {
 export default function ServicesPage() {
   const [services, setServices] = useState<Service[]>([])
   const [loading, setLoading] = useState(true)
-
+//función para obtener los servicios desde el endpoint
   useEffect(() => {
     const fetchServices = async () => {
       try {

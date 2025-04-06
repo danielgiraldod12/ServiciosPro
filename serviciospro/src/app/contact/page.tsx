@@ -28,7 +28,7 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     try {
-//consumo del endpoint  para enviar el correo.
+      //consumo del endpoint  para enviar el correo.
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -40,13 +40,14 @@ export default function ContactPage() {
       const data = await res.json()
       console.log(data)
       if (data.success) {
+        //Alerta de éxito
         Swal.fire({
           icon: "success",
           title: "¡Mensaje enviado!",
           text: "Nos pondremos en contacto contigo pronto.",
           confirmButtonText: "Aceptar",
         })
-          
+          //Limpiar el formulario después de enviar el mensaje
       setFormData({
         name: "",
         email: "",

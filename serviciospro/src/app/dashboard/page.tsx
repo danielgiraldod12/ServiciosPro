@@ -84,7 +84,7 @@ export default function DashboardPage() {
     </div>
   )
 }
-
+// AdminDashboard y ViewerDashboard son componentes separados para cada rol
 function AdminDashboard() {
   return (
     <div className="space-y-8">
@@ -128,22 +128,13 @@ function AdminDashboard() {
             <div className="text-2xl font-bold text-primary mb-1">24</div>
             <div className="text-gray-600 text-sm">Usuarios Registrados</div>
           </div>
-
-          <div className="border rounded-lg p-4">
-            <div className="text-2xl font-bold text-primary mb-1">4</div>
-            <div className="text-gray-600 text-sm">Servicios Activos</div>
-          </div>
-
-          <div className="border rounded-lg p-4">
-            <div className="text-2xl font-bold text-primary mb-1">128</div>
-            <div className="text-gray-600 text-sm">Visitas Mensuales</div>
-          </div>
         </div>
       </div>
     </div>
   )
 }
-
+// ViewerDashboard es un componente separado para el rol "viewer"
+// Este componente muestra un panel de visualización con estadísticas y un listado de usuarios
 function ViewerDashboard() {
   const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
@@ -210,17 +201,7 @@ function ViewerDashboard() {
           <div className="border rounded-lg p-4">
             <div className="text-2xl font-bold text-primary mb-1">24</div>
             <div className="text-gray-600 text-sm">Usuarios Registrados</div>
-          </div>
-
-          <div className="border rounded-lg p-4">
-            <div className="text-2xl font-bold text-primary mb-1">4</div>
-            <div className="text-gray-600 text-sm">Servicios Activos</div>
-          </div>
-
-          <div className="border rounded-lg p-4">
-            <div className="text-2xl font-bold text-primary mb-1">128</div>
-            <div className="text-gray-600 text-sm">Visitas Mensuales</div>
-          </div>
+          </div>       
         </div>
       </div>
 

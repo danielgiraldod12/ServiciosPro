@@ -7,7 +7,6 @@ interface User {
     id: string;
     name: string;
     email: string;
-     
     password: string; 
   }
   
@@ -25,15 +24,15 @@ const getUsers = () => {
         {
           id: "1",
           name: "Admin User",
-          email: "admin@example.com",
+          email: "admin@pro.com",
           password: "admin123",
           role: "admin",
         },
         {
           id: "2",
           name: "Viewer User",
-          email: "viewer@example.com",
-          password: "viewer123",
+          email: "user@pro.com",
+          password: "user123",
           role: "viewer",
         },
       ]

@@ -53,7 +53,7 @@ export default function UsersPage() {
     checkAuth()
     fetchUsers()
   }, [router])
-
+//Función para obtener los usuarios desde la API
   const fetchUsers = async () => {
     try {
       const res = await fetch("/api/users")
@@ -137,7 +137,7 @@ export default function UsersPage() {
       console.error("Error:", error)
     }
   }
-
+//Función para eliminar un usuario
   const handleDeleteUser = async (userId: string) => {
     if (!confirm("¿Estás seguro de que deseas eliminar este usuario?")) return
 

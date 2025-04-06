@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
-
+//Sección de contacto
+// Esta sección proporciona información de contacto, incluyendo dirección, teléfono, correo electrónico y horario de atención.
 export default function ContactInfo() {
   return (
     <section className="py-16 bg-white">

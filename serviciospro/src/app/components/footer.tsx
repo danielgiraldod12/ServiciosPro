@@ -1,12 +1,11 @@
 import Link from "next/link"
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
-
+// Este componente Footer proporciona información de contacto, enlaces rápidos y redes sociales para la empresa ServiciosPro.
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Columna 1: Información de la empresa */}
           <div>
             <h3 className="text-xl font-bold mb-4">ServiciosPro</h3>
             <p className="text-gray-400 mb-4">

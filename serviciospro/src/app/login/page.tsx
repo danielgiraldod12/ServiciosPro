@@ -13,7 +13,7 @@ export default function LoginPage() {
     e.preventDefault();
     setIsLoading(true);
     setError("");
-
+//aqui se hace la peticion al endpoint de login y se guarda el token en una cookie
     try {
       const res = await fetch("/api/auth/login", {
         method: "POST",

@@ -8,7 +8,7 @@ interface ModalProps {
   children: ReactNode
   footer?: ReactNode
 }
-
+// Este componente Modal proporciona una ventana emergente que se puede abrir y cerrar, mostrando contenido dinámico y un pie de página opcional.
 export default function Modal({ isOpen, onClose, title, children, footer }: ModalProps) {
   if (!isOpen) return null
 

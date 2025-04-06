@@ -38,7 +38,7 @@ export default function ServicesPage() {
     features: [""],
   })
   const router = useRouter()
-
+// Verificar autenticación y obtener servicios al cargar la página
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -64,7 +64,7 @@ export default function ServicesPage() {
     checkAuth()
     fetchServices()
   }, [router])
-
+//consumo del endpoint para obtener los servicios
   const fetchServices = async () => {
     try {
       const res = await fetch("/api/services")
@@ -142,7 +142,7 @@ export default function ServicesPage() {
       console.error("Error:", error)
     }
   }
-
+// Función para manejar la edición de un servicio
   const handleEditService = (service: Service) => {
     setEditingService(service)
     setFormData({
@@ -154,7 +154,7 @@ export default function ServicesPage() {
     })
     setShowModal(true)
   }
-
+// Función para manejar la actualización de un servicio
   const handleUpdateService = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -190,7 +190,7 @@ export default function ServicesPage() {
       console.error("Error:", error)
     }
   }
-
+//Función para manejar la eliminación de un servicio
   const handleDeleteService = async (serviceId: string) => {
     if (!confirm("¿Estás seguro de que deseas eliminar este servicio?")) return
 
@@ -208,7 +208,7 @@ export default function ServicesPage() {
       console.error("Error:", error)
     }
   }
-
+// Función para restablecer el formulario y cerrar el modal
   const resetForm = () => {
     setFormData({
       name: "",

@@ -1,12 +1,13 @@
 import Image from "next/image"
 import { Star } from "lucide-react"
-
+// Sección de testimonios
+// Esta sección presenta testimonios de clientes satisfechos, destacando la calidad de los servicios ofrecidos y la satisfacción del cliente.
 export default function TestimonialsSection() {
   const testimonials = [
     {
       name: "Ana Rodríguez",
       position: "CEO, Empresa Innovadora",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/img1.png",
       content:
         "Los servicios proporcionados superaron nuestras expectativas. El equipo fue profesional, eficiente y realmente entendió nuestras necesidades empresariales.",
       rating: 5,
@@ -14,17 +15,17 @@ export default function TestimonialsSection() {
     {
       name: "Carlos Méndez",
       position: "Director de Marketing, TechSolutions",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/img2.webp",
       content:
-        "Implementar estos servicios transformó completamente nuestras operaciones. Ahora somos más eficientes y podemos centrarnos en lo que realmente importa.",
+        "Excelente servicio. Precios competitivos dentro del mercado realmente se enfocan en los servicios que más importan. Los sericios incluyen el uso de productos de la mejor calidad.",
       rating: 5,
     },
     {
       name: "Laura Gómez",
       position: "Gerente de Operaciones, StartupXYZ",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/pic3.png",
       content:
-        "El soporte al cliente es excepcional. Siempre están disponibles para resolver cualquier duda y nos han ayudado a optimizar nuestros procesos.",
+        "El servicio al cliente es excepcional. Siempre están disponibles para resolver cualquier duda. Recomiendo encarecidamente sus servicios. Sin embargo el tiempo de respuesta podría mejorar.",
       rating: 4,
     },
   ]

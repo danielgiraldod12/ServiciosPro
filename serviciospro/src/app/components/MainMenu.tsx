@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
-
+// Sección principal del menú
+// Este componente proporciona una introducción a los servicios ofrecidos, junto con un botón de llamada a la acción para explorar más.
 export default function MainMenu() {
   return (
     <section className="relative bg-gradient-to-r from-primary/10 to-primary/5 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
