@@ -5,7 +5,7 @@ import type React from "react"
 import { useRouter } from "next/navigation"
 import { Package, Pencil, Trash2, Plus, Search, ArrowLeft, X } from "lucide-react"
 import Link from "next/link"
-import Modal from "@/app/components/modal"
+import Modal from "@/app/components/Modal"
 
 interface Service {
   id: string
