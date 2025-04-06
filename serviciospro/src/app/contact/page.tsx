@@ -3,6 +3,7 @@ import { useState } from "react"
 import type React from "react"
 
 import { MapPin, Phone, Mail, Send } from "lucide-react"
+import Swal from "sweetalert2"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -27,22 +28,40 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      // Aquí iría la lógica para enviar el formulario a tu API
-      // Por ahora simulamos una respuesta exitosa
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      setSubmitStatus({
-        success: true,
-        message: "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
+//consumo del endpoint  para enviar el correo.
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       })
 
-      // Resetear el formulario
+      const data = await res.json()
+      console.log(data)
+      if (data.success) {
+        Swal.fire({
+          icon: "success",
+          title: "¡Mensaje enviado!",
+          text: "Nos pondremos en contacto contigo pronto.",
+          confirmButtonText: "Aceptar",
+        })
+          
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: "",
       })
+    }
+      else{
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente.",
+          confirmButtonText: "Aceptar",
+        })
+      }
     } catch (error) {
         console.log(error)
       setSubmitStatus({
