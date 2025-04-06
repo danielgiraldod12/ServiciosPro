@@ -3,7 +3,6 @@ import { useState } from "react"
 import type React from "react"
 
 import { MapPin, Phone, Mail, Send } from "lucide-react"
-import Swal from "sweetalert2"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -29,7 +28,7 @@ export default function ContactPage() {
 
     try {
       //consumo del endpoint  para enviar el correo.
-      const res = await fetch("/api/send-email", {
+      const res = await fetch("/api/send-mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,11 +40,9 @@ export default function ContactPage() {
       console.log(data)
       if (data.success) {
         //Alerta de éxito
-        Swal.fire({
-          icon: "success",
-          title: "¡Mensaje enviado!",
-          text: "Nos pondremos en contacto contigo pronto.",
-          confirmButtonText: "Aceptar",
+        setSubmitStatus({
+          success: true,
+          message: "Mesaje enviado correctamente. Nos pondremos en contacto contigo pronto.",
         })
           //Limpiar el formulario después de enviar el mensaje
       setFormData({
@@ -56,11 +53,10 @@ export default function ContactPage() {
       })
     }
       else{
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente.",
-          confirmButtonText: "Aceptar",
+        //Alerta de error
+        setSubmitStatus({
+          success: false,
+          message: "Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.",
         })
       }
     } catch (error) {
