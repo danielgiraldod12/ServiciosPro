@@ -216,7 +216,7 @@ export default function UsersPage() {
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="hidden md:block overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
@@ -284,9 +284,36 @@ export default function UsersPage() {
             </tbody>
           </table>
         </div>
+        <div className="md:hidden">
+          {filteredUsers.map(user => (
+            <div key={user.id} className="bg-white p-4 mb-4 rounded shadow">
+              <div className="font-medium">{user.name}</div>
+              <div className="text-sm text-gray-500">{user.email}</div>
+              <div className="mt-2">
+                <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                  user.role === "admin" ? "bg-purple-100 text-purple-800" : 
+                  user.role === "user" ? "bg-blue-100 text-blue-800" : 
+                  "bg-green-100 text-green-800"
+                }`}>
+                  {user.role === "admin" ? "Administrador" : user.role === "user" ? "Usuario" : "Visualizador"}
+                </span>
+              </div>
+              {isAdmin && (
+                <div className="mt-3 flex justify-end gap-3">
+                  <button onClick={() => handleEditUser(user)} className="text-primary hover:text-primary/80">
+                    <Pencil className="h-4 w-4" />
+                  </button>
+                  <button onClick={() => handleDeleteUser(user.id)} className="text-red-600 hover:text-red-900">
+                    <Trash2 className="h-4 w-4" />
+                  </button>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Usando el componente Modal reutilizable */}
+    
       {isAdmin && (
         <Modal
           isOpen={showAddModal}
